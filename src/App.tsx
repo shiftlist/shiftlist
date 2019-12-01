@@ -1,11 +1,10 @@
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon, } from '@fortawesome/react-fontawesome';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useState } from 'react';
-import { Button, Form, FormControl, Nav, Navbar, NavDropdown, NavItem } from 'react-bootstrap';
-import { LinkContainer } from 'react-router-bootstrap';
+import {  Nav, Navbar } from 'react-bootstrap';
 import {
   BrowserRouter as Router,
+  Link,
   Route,
   Switch
 } from "react-router-dom";
@@ -28,8 +27,8 @@ const App: React.FC = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
-              <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/timesheet">TimeSheet</Nav.Link>
+              <Link className="nav-link" to="/">Home</Link>
+              <Link className="nav-link" to="/timesheet">TimeSheet</Link>
             </Nav>
             <Navbar.Text>
               {user.isLoggedIn && "Logged in as " + user.userName}
